@@ -1,12 +1,17 @@
 const http= require('http');
-var data = [
-    {firstname: 'anil', lastname:'Kumar', age: 65},
-    {firstname: 'Naveed', lastname:'Abbas', age: 65},
-    {firstname: 'Zeeshan', lastname:'Noor', age: 65}
-]
-http.createServer(function(req, res){
-   
-        res.writeHead(200,'Content-Type','application/json')
-    res.write('hello');
-    res.end();
-    }).listen(3900);
+const port = 3900;
+
+const server= http.createServer(function(req, res){
+   res.write("Heelo node");
+   res.end();
+     
+    })
+
+    server.listen(port, function(er){
+        if(er){
+            console.log("error");
+        }
+        else{
+            console.log("Server is listening to port: "+ port);
+        }
+    })
