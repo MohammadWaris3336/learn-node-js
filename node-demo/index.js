@@ -1,17 +1,9 @@
-const http= require('http');
-const port = 3900;
-
-const server= http.createServer(function(req, res){
-   res.write("Heelo node");
-   res.end();
-     
-    })
-
-    server.listen(port, function(er){
-        if(er){
-            console.log("error");
-        }
-        else{
-            console.log("Server is listening to port: "+ port);
-        }
-    })
+var http = require('http');
+var fs = require('fs')
+http.createServer(function(req, res){
+fs.readFile('demo.html', function(err, data){
+    res.writeHead(200, {'Content-Type' : 'text/html'})
+    res.write(data);
+    return res.end();
+})
+}).listen(3306);
