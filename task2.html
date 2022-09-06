@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1 Object Filtering</title>
+    <style>
+        h1.tb-h1 {
+    text-align: center;
+    
+}
+table {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table tr td, table tr th {
+    padding: 10px !important;
+}
+.main {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+    </style>
+
+</head>
+<body>
+
+    <div class="main">
+    <button onclick="actual()">Filter By Actual data </button>
+
+    <button onclick="highprice()">Filter By High Price </button>
+    
+    <button onclick="highrating()">Filter By High Rating </button>
+
+    <div id="actual"></div>
+    <div id="price"></div>
+    <div id="rating"></div>
+
+
+    
+    </div>
+
+
+    <script>
+        var arr=[
+            {name: "Apple", price: 300, rating: 3.5},
+            {name: "Orange", price: 250, rating: 4.5},
+            {name: "Banana", price: 500, rating: 5.5},
+            {name: "Mango", price: 600, rating: 2.5},
+        ]
+
+        function actual(){
+           
+        
+            
+            var wrapper = document.getElementById("actual");
+            var myHTML = '';
+
+            myHTML +=  "<h1 class='tb-h1'>Actual Data</h1>";
+            myHTML +=  "<table border='1px'><tr><th>Name</th><th>Price</th><th>Rating</th></tr>";
+
+            for (var a=0; a<arr.length; a++ ){
+                
+                
+                    myHTML += '<tr>';
+                    myHTML += '<td>'+ arr[a].name+ '</td><td>'+ arr[a].price + '</td><td>'+ arr[a].rating+ '</td>';
+                    myHTML += '</tr>';
+                
+                
+                                  
+        }
+        myHTML += '</table>';
+        wrapper.innerHTML = myHTML;
+        
+    }
+        
+
+
+            function highprice(){
+        var ab= arr.sort(function(a, b){
+            return b.price - a.price;
+        })
+        var wrapperprice = document.getElementById("price");
+            var myprice = '';
+
+            myprice +=  "<h1 class='tb-h1'>Filter By High Price</h1>";
+            myprice +=  "<table border='1px'><tr><th>Name</th><th>Price</th><th>Rating</th></tr>";
+
+            for (var a=0; a<arr.length; a++ ){
+                
+                
+                    myprice += '<tr>';
+                    myprice += '<td>'+ arr[a].name+ '</td><td>'+ arr[a].price + '</td><td>'+ arr[a].rating+ '</td>';
+                    myprice += '</tr>';
+                
+                
+                                  
+        }
+        myprice += '</table>';
+        wrapperprice.innerHTML = myprice;
+        
+    }
+            //  highprice();
+
+
+            function highrating(){
+        var abb= arr.sort(function(a, b){
+            return b.rating - a.rating;
+        })
+        var wrapperrating = document.getElementById("rating");
+            var myrating = '';
+
+            myrating +=  "<h1 class='tb-h1'>Filter By High Rating</h1>";
+            myrating +=  "<table border='1px'><tr><th>Name</th><th>Price</th><th>Rating</th></tr>";
+
+            for (var a=0; a<arr.length; a++ ){
+                
+                
+                    myrating += '<tr>';
+                    myrating += '<td>'+ arr[a].name+ '</td><td>'+ arr[a].price + '</td><td>'+ arr[a].rating+ '</td>';
+                    myrating += '</tr>';
+                
+                
+                                  
+        }
+        myrating += '</table>';
+        wrapperrating.innerHTML = myrating;
+        
+    }
+    // highrating();
+
+
+    
+    </script>
+</body>
+</html>
