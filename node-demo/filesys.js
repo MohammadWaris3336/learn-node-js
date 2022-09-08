@@ -81,7 +81,7 @@ fs.chown(filecheck, 1541, 999, err4 =>{
     console.log("uid Gid Add Sucessfully");
 });
 
-// <<<<<<< HEAD
+
 const fsdir=require('fs');
 const fspath=require('path');
 fsdir.mkdir(fspath.join(__dirname, 'new'), err7 => {
@@ -102,5 +102,4 @@ fs.open('demo.html', 'r', function (err8, f) {
     }
     console.log('Opened!');
 })
-// =======
-// >>>>>>> 3c204d28fbc08f3fa8b7482278e38fbba8f600bb
+
