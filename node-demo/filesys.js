@@ -82,16 +82,16 @@ fs.chown(filecheck, 1541, 999, err4 =>{
 });
 
 
-const fsdir=require('fs');
-const fspath=require('path');
-fsdir.mkdir(fspath.join(__dirname, 'new'), err7 => {
-    if(err7){
-        console.log("Error");
-    }
-    console.log("Directory added");
+// const fsdir=require('fs');
+// const fspath=require('path');
+// fsdir.mkdir(fspath.join(__dirname, 'new2'), err7 => {
+//     if(err7){
+//         console.log("Error");
+//     }
+//     console.log("Directory added");
 
 
-});
+// });
 
 
 const readf = require('fs');
@@ -101,5 +101,38 @@ fs.open('demo.html', 'r', function (err8, f) {
         console.log('err');
     }
     console.log('Opened!');
-})
+});
 
+
+const fsrp = require('fs');
+  
+console.log("Current Directory path:",__dirname);
+path1= __dirname+"\\..";
+
+fsrp.realpath(path1, (err9, resolved) => {
+
+    if (err9){
+        console.log(err9);
+    }
+    console.log("Current One Directory up "+ resolved);
+
+});
+
+
+const fsre= require('fs');
+
+
+getCurrentFilenames();
+
+
+fsre.rename('htmlnew.txt', 'htmldemo.txt',()=>{
+   console.log("FIle REnamed");
+});
+
+getCurrentFilenames();
+
+function getCurrentFilenames(){
+    fsre.readdirSync(__dirname).forEach( file => {
+        console.log(file);
+    });
+}
