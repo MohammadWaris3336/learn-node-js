@@ -126,7 +126,7 @@ getCurrentFilenames();
 
 
 fsre.rename('htmlnew.txt', 'htmldemo.txt',()=>{
-   console.log("FIle REnamed");
+   console.log("FIle REnamed!");
 });
 
 getCurrentFilenames();
