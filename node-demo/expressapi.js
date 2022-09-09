@@ -23,7 +23,7 @@ app.get('/help', (req, res)=>{
     res.send([{
         name: "Ali", age: 22, Education: "BSCS"
     },
-    {name: "umer", age: 32, Education: "BSCa"}
+    {name: "umer", age: 32, Education: "BSCaa"}
 ]
     );
 });
